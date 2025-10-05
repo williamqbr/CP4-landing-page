@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import avatar from "./assets/avatar.jpeg"
 
 function App() {
@@ -31,9 +31,9 @@ function App() {
           transition={{ duration: 1 }}
         >
           <h2 className="text-6xl font-extrabold drop-shadow-[0_0_15px_#22d3ee]">
-  O poder do{' '}
-  <span className="text-purple-400 drop-shadow-[0_0_20px_#a855f7]">Tailwind</span>{' '}
-  em ação
+  Explorando o {' '}
+  <span className="text-purple-400 drop-shadow-[0_0_20px_#a855f7]">Poder</span>{' '}
+  do design digital
 </h2>
           <p className="mt-6 text-xl text-gray-300">
             Front-end Design
@@ -73,6 +73,48 @@ function App() {
   </div>
 </section>
 
+{/* Seção: Layout Responsivo */}
+<section
+  id="layout"
+  className="min-h-screen flex flex-col justify-center items-center bg-black/30 mt-16"
+>
+  <h3 className="text-5xl font-bold mb-12 text-cyan-400 drop-shadow-[0_0_15px_#22d3ee]">
+    Layout e Responsividade
+  </h3>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl">
+    {[
+      {
+        titulo: "Explorando o poder do design digital",
+        descricao:
+          "Uma seleção dos trabalhos mais recentes, desenvolvidos com atenção ao design, harmonia visual e fluidez na navegação. Cada detalhe reflete minha evolução e cuidado na construção de interfaces.",
+      },
+      {
+        titulo: "Experiência Visual",
+        descricao:
+          "Busco unir estética e funcionalidade, criando composições que valorizam a identidade de cada projeto. O equilíbrio entre tipografia, cores e movimento torna a experiência mais envolvente.",
+      },
+      {
+        titulo: "Design Adaptável",
+        descricao:
+          "Cada elemento do portfólio foi pensado para se ajustar a diferentes telas e resoluções, mantendo a mesma sensação de imersão e clareza em qualquer dispositivo.",
+      },
+    ].map((item, i) => (
+      <motion.div
+        key={i}
+        className="bg-black/40 border border-cyan-400/30 rounded-xl p-8 shadow-lg hover:shadow-cyan-400/50 transition transform hover:-translate-y-2"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: i * 0.2 }}
+        viewport={{ once: true }}
+      >
+        <h4 className="text-2xl font-bold text-cyan-400 mb-4">{item.titulo}</h4>
+        <p className="text-gray-400">{item.descricao}</p>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
 
       {/* Sobre */}
       <section id="about" className="min-h-screen flex flex-col justify-center items-center text-center px-6">
@@ -99,7 +141,7 @@ function App() {
           <p className="max-w-2xl text-gray-300 text-lg leading-relaxed">
             Sou um desenvolvedor apaixonado por criar experiências
             visuais únicas e futuristas.  
-            Este portfólio mostra como React, Vite e Tailwind podem ser usados
+            Esta lading page mostra como React, Vite e Tailwind podem ser usados
             para construir interfaces modernas.
           </p>
         </motion.div>
@@ -114,7 +156,7 @@ function App() {
         <div className="flex gap-8 mt-6 text-3xl">
           <a href="#" className="hover:text-cyan-400 transition"><FaLinkedin /></a>
           <a href="#" className="hover:text-cyan-400 transition"><FaGithub /></a>
-          <a href="#" className="hover:text-cyan-400 transition"><FaTwitter /></a>
+          <a href="#" className="hover:text-cyan-400 transition"><FaInstagram /></a>
         </div>
       </section>
 
