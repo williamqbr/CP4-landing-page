@@ -4,5 +4,8 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/CP4-portfolio/',
+  base: '/Landing-page/',
+  build: {
+    outDir: 'docs', 
+  },
 })
